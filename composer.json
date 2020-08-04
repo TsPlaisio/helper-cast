@@ -1,0 +1,14 @@
+{
+  "name": "plaisio-ts/helper-cast",
+  "description": "PhpPlaisio (TypeScript): Safely cast mixed values to bool, number (float or integer), or string",
+  "keywords": [
+    "PhpPlaisio",
+    "TypeScript",
+    "Cast Safely"
+  ],
+  "license": "MIT",
+  "config": {
+    "bin-dir": "bin/",
+    "sort-packages": true
+  }
+}

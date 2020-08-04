@@ -1,0 +1,22 @@
+{
+  "name": "plaisio-helper-cast",
+  "version": "0.0.1",
+  "description": "Plaisio: Cast",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.0",
+    "nyc": "^15.1.0",
+    "typings": "^2.1.1"
+  },
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha test/**/*.js"
+  },
+  "keywords": [
+    "Savely",
+    "Casting"
+  ],
+  "license": "MIT"
+}

@@ -11,7 +11,7 @@
     "bin-dir": "bin/",
     "sort-packages": true
   },
-  "require": {
+  "require-dev": {
     "phing/phing": "^2.16"
   }
 }

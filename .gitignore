@@ -1,5 +1,6 @@
 /.idea
 /.nyc_output
+/composer.lock
 /coverage
 /node_modules
 /package-lock.json

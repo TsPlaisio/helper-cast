@@ -1,0 +1,31 @@
+<project name="JEC" default="build" basedir=".">
+    <!-- Run composer update and executes various other updates -->
+    <target name="update">
+        <exec executable="composer" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="update"/>
+        </exec>
+        <exec executable="npm" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="update"/>
+        </exec>
+
+        <!-- Show outdated packages -->
+        <exec executable="composer" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="outdated"/>
+            <arg value="--direct"/>
+        </exec>
+        <exec executable="npm" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="outdated"/>
+        </exec>
+    </target>
+
+    <!-- Runs all unit tests -->
+    <target name="unit">
+        <exec command="npm test" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="build"/>
+</project>

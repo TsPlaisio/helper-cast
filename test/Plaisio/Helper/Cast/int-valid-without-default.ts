@@ -17,6 +17,8 @@ const manTests = [
 
   // String test cases.
   {arg: '123', expected: 123},
+  {arg: '123.0', expected: 123},
+  {arg: '123.0000', expected: 123},
   {arg: '-123', expected: -123},
   {arg: '0', expected: 0},
 

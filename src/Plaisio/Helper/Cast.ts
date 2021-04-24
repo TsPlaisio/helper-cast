@@ -88,7 +88,7 @@ export class Cast
         return Number.isInteger(value);
 
       case 'string':
-        const re = new RegExp('^[-+]?(0|[1-9][0-9]*)$');
+        const re = new RegExp('^[-+]?(0|[1-9][0-9]*)(\.0+)?$');
 
         return (re.exec(value) !== null);
 

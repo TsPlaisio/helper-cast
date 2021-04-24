@@ -1,4 +1,4 @@
-<project name="JEC" default="build" basedir=".">
+<project name="Plaisio" default="build" basedir=".">
     <!-- Run composer update and executes various other updates -->
     <target name="update">
         <exec executable="composer" checkreturn="true" passthru="true">
@@ -24,6 +24,10 @@
 
     <!-- Runs all unit tests -->
     <target name="unit">
+        <exec command="node_modules/.bin/tsc -m umd -t ES6 --sourceMap --strict --pretty `find src -name &quot;*.ts&quot;`"
+              passthru="true" checkreturn="true"/>
+        <exec command="node_modules/.bin/tsc -m umd -t ES6 --sourceMap --strict --pretty `find test -name &quot;*.ts&quot;`"
+              passthru="true" checkreturn="true"/>
         <exec command="npm test" passthru="true" checkreturn="true"/>
     </target>
 

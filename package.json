@@ -1,6 +1,5 @@
 {
   "name": "plaisio-helper-cast",
-  "version": "0.0.1",
   "description": "Plaisio: Cast",
   "dependencies": {},
   "devDependencies": {

@@ -20,7 +20,7 @@ export class Cast
    *
    * @param value The value.
    */
-  public static isManFiniteFloat(value: any): boolean
+  public static isManFloat(value: any): boolean
   {
     switch (typeof value)
     {
@@ -42,11 +42,11 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns whether a value can be cast to a float.
+   * Returns whether a value can be cast to a float including NaN, -INF, and INF.
    *
    * @param value The value.
    */
-  public static isManFloat(value: any): boolean
+  public static isManFloatInclusive(value: any): boolean
   {
     switch (typeof value)
     {
@@ -134,20 +134,20 @@ export class Cast
    *
    * @param value The value.
    */
-  public static isOptFiniteFloat(value: any): boolean
+  public static isOptFloat(value: any): boolean
   {
-    return (value == null || Cast.isManFiniteFloat(value));
+    return (value == null || Cast.isManFloat(value));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns whether a value is null, undefined or can be cast to a float.
+   * Returns whether a value is null, undefined or can be cast to a float including NaN, -NF, and INF.
    *
    * @param value The value.
    */
-  public static isOptFloat(value: any): boolean
+  public static isOptFloatInclusive(value: any): boolean
   {
-    return (value == null || Cast.isManFloat(value));
+    return (value == null || Cast.isManFloatInclusive(value));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -213,7 +213,7 @@ export class Cast
    * @param defaultValue The default value. If the value is null or undefined and the default is not null and defined
    *                     the default value will be returned.
    */
-  public static toManFiniteFloat(value: any, defaultValue: number | null = null): number
+  public static toManFloat(value: any, defaultValue: number | null = null): number
   {
     if (value == null)
     {
@@ -225,7 +225,7 @@ export class Cast
       return defaultValue;
     }
 
-    if (!Cast.isManFiniteFloat(value))
+    if (!Cast.isManFloat(value))
     {
       throw new Error('Value can not be converted to a finite float');
     }
@@ -235,13 +235,14 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Converts a value to a float. If the value can not be safely cast to a float throws an exception.
+   * Converts a value to a float including NaN, -INF, and INF. If the value can not be safely cast to a float throw an
+   * exception.
    *
    * @param value        The value.
    * @param defaultValue The default value. If the value is null or undefined and the default is not null and defined
    *                     the default value will be returned.
    */
-  public static toManFloat(value: any, defaultValue: number | null = null): number
+  public static toManFloatInclusive(value: any, defaultValue: number | null = null): number
   {
     if (value == null)
     {
@@ -253,7 +254,7 @@ export class Cast
       return defaultValue;
     }
 
-    if (!Cast.isManFloat(value))
+    if (!Cast.isManFloatInclusive(value))
     {
       throw new Error('Value can not be converted to a float');
     }
@@ -379,7 +380,7 @@ export class Cast
    * @param defaultValue The default value. If the value is null or undefined and the default is not null and defined
    *                     the default value will be returned.
    */
-  public static toOptFiniteFloat(value: any, defaultValue: number | null = null): number | null
+  public static toOptFloat(value: any, defaultValue: number | null = null): number | null
   {
     if (value == null)
     {
@@ -391,18 +392,19 @@ export class Cast
       return defaultValue;
     }
 
-    return Cast.toManFiniteFloat(value);
+    return Cast.toManFloat(value);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Converts a value to a float. If the value can not be safely cast to a float throws an exception.
+   * Converts a value to a float including NaN, -INF, and INF. If the value can not be safely cast to a float throws an
+   * exception.
    *
    * @param value        The value.
    * @param defaultValue The default value. If the value is null or undefined and the default is not null and defined
    *                     the default value will be returned.
    */
-  public static toOptFloat(value: any, defaultValue: number | null = null): number | null
+  public static toOptFloatInclusive(value: any, defaultValue: number | null = null): number | null
   {
     if (value == null)
     {
@@ -414,7 +416,7 @@ export class Cast
       return defaultValue;
     }
 
-    return Cast.toManFloat(value);
+    return Cast.toManFloatInclusive(value);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -467,4 +469,4 @@ export class Cast
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Plaisio\Console\Helper\TypeScript\TypeScriptMarkHelper::md5: 511a094f3f5d2fd2adede2cbc5d770fa
+// Plaisio\Console\Helper\TypeScript\TypeScriptMarkHelper::md5: fc6cf5734a51d3485399658b25be249a

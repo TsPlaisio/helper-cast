@@ -5,7 +5,7 @@ export class Cast
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value can be cast to a boolean. Otherwise, returns false.
+   * Returns whether a value can be cast to a boolean.
    *
    * @param value The value.
    */
@@ -16,7 +16,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value can be cast to a finite float. Otherwise, returns false.
+   * Returns whether a value can be cast to a finite float.
    *
    * @param value The value.
    */
@@ -42,7 +42,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value can be cast to a float. Otherwise, returns false.
+   * Returns whether a value can be cast to a float.
    *
    * @param value The value.
    */
@@ -73,7 +73,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value can be cast to an integer. Otherwise, returns false.
+   * Returns whether a value can be cast to an integer.
    *
    * @param value The value.
    */
@@ -99,7 +99,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value can be cast to a string. Otherwise, returns false.
+   * Returns whether a value can be cast to a string.
    *
    * @param value The value.
    */
@@ -119,7 +119,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value is null, undefined or can be cast to a boolean, otherwise return false.
+   * Returns whether a value is null, undefined or can be cast to a boolean.
    *
    * @param value The value.
    */
@@ -130,7 +130,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value is null, undefined or can be cast to a finite float, otherwise return false.
+   * Returns whether a value is null, undefined or can be cast to a finite float.
    *
    * @param value The value.
    */
@@ -141,7 +141,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value is null, undefined or can be cast to a float, otherwise return false.
+   * Returns whether a value is null, undefined or can be cast to a float.
    *
    * @param value The value.
    */
@@ -152,7 +152,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value is null, undefined or can be cast to an integer, otherwise return false.
+   * Returns whether a value is null, undefined or can be cast to an integer.
    *
    * @param value The value.
    */
@@ -163,7 +163,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns true if and only if a value is null, undefined or can be cast to a string, otherwise return false.
+   * Returns whether a value is null, undefined or can be cast to a string.
    *
    * @param value The value.
    */

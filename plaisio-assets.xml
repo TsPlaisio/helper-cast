@@ -5,5 +5,5 @@
             <include name="**/*.ts"/>
         </fileset>
     </asset>
-    <root>src</root>
+    <root js="">src</root>
 </assets>

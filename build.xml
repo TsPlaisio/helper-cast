@@ -1,16 +1,28 @@
 <project name="Plaisio" default="build" basedir=".">
-    <!-- Run composer update and executes various other updates -->
+    <!-- Update dependencies -->
     <target name="update">
         <exec executable="composer" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
             <arg value="update"/>
         </exec>
-        <exec executable="npm" checkreturn="true" passthru="true">
+
+        <phing phingfile="build.xml" target="code-generation" haltonfailure="true"/>
+        <phing phingfile="build.xml" target="outdated" haltonfailure="true"/>
+    </target>
+
+    <!-- Install dependencies -->
+    <target name="install">
+        <exec executable="composer" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
-            <arg value="update"/>
+            <arg value="install"/>
         </exec>
 
-        <!-- Show outdated packages -->
+        <phing phingfile="build.xml" target="code-generation" haltonfailure="true"/>
+        <phing phingfile="build.xml" target="outdated" haltonfailure="true"/>
+    </target>
+
+    <!-- Show outdated dependencies -->
+    <target name="outdated">
         <exec executable="composer" checkreturn="true" passthru="true">
             <arg value="--ansi"/>
             <arg value="outdated"/>
@@ -22,13 +34,21 @@
         </exec>
     </target>
 
+    <target name="code-generation">
+        <exec executable="bin/plaisio" checkreturn="true" passthru="true">
+            <arg value="--ansi"/>
+            <arg value="plaisio:type-script-automator"/>
+            <arg value="--once"/>
+        </exec>
+    </target>
+
     <!-- Runs all unit tests -->
     <target name="unit">
-        <exec command="node_modules/.bin/tsc -m umd -t ES6 --sourceMap --strict --pretty `find src -name &quot;*.ts&quot;`"
-              passthru="true" checkreturn="true"/>
-        <exec command="node_modules/.bin/tsc -m umd -t ES6 --sourceMap --strict --pretty `find test -name &quot;*.ts&quot;`"
-              passthru="true" checkreturn="true"/>
-        <exec command="npm test" passthru="true" checkreturn="true"/>
+        <exec executable="/bin/bash" checkreturn="true" passthru="true">
+            <arg value="-e"/>
+            <arg value="-x"/>
+            <arg value="test/unit-test.sh"/>
+        </exec>
     </target>
 
     <target name="build"/>

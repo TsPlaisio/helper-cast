@@ -141,7 +141,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns whether a value is null, undefined or can be cast to a float including NaN, -NF, and INF.
+   * Returns whether a value is null, undefined or can be cast to a float including NaN, -INF, and INF.
    *
    * @param value The value.
    */
@@ -235,7 +235,7 @@ export class Cast
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Converts a value to a float including NaN, -INF, and INF. If the value can not be safely cast to a float throw an
+   * Converts a value to a float including NaN, -INF, and INF. If the value can not be safely cast to a float throws an
    * exception.
    *
    * @param value        The value.
@@ -469,4 +469,4 @@ export class Cast
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Plaisio\Console\Helper\TypeScript\TypeScriptMarkHelper::md5: fc6cf5734a51d3485399658b25be249a
+// Plaisio\Console\TypeScript\Helper\MarkHelper::md5: 8a60b2c778123f76bc4edb8c87795f76
